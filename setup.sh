@@ -1,4 +1,8 @@
+# setup.sh
+
 mkdir -p ~/.streamlit/
+
+echo "Streamlit version: $(streamlit --version)"
 
 echo "\
 [server]\n\
