@@ -1,13 +1,11 @@
-# setup.sh
-
 mkdir -p ~/.streamlit/
-
-echo "Streamlit version: $(streamlit --version)"
-
+echo "\
+[general]\n\
+email = \"your-email@domain.com\"\n\
+" > ~/.streamlit/credentials.toml
 echo "\
 [server]\n\
-port = $PORT\n\
-enableCORS = false\n\
 headless = true\n\
-\n\
+enableCORS=false\n\
+port = $PORT\n\
 " > ~/.streamlit/config.toml
