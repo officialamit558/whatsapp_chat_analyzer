@@ -27,6 +27,10 @@ def preprocess(data):
     df['message'] = messages
     df.drop(columns=['user_message'], inplace=True)
 
+    # Check if 'group_notification' is in user_list before removing
+    if 'group_notification' in df['user'].tolist():
+        df = df[df['user'] != 'group_notification']
+
     df['only_date'] = df['date'].dt.date
     df['year'] = df['date'].dt.year
     df['month_num'] = df['date'].dt.month
