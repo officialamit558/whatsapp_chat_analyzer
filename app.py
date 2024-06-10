@@ -115,6 +115,12 @@ if uploaded_file is not None:
         st.title('Most commmon words')
         st.pyplot(fig)
 
+        #Sentiment Analysis
+        st.title("Sentiment Analysis")
+        sentiment_df = helper.sentiment_analysis(selected_user, df)
+        fig, ax = plt.subplots()
+        ax.bar(sentiment_df['sentiment_label'], sentiment_df['message'], color=['green', 'red', 'blue'])
+        st.pyplot(fig)
         
 
 
