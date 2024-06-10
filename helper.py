@@ -3,8 +3,13 @@ from wordcloud import WordCloud
 import pandas as pd
 from collections import Counter
 import emoji 
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
+nltk.download('vader_lexicon')
 extract = URLExtract()
+sentiment_analyzer = SentimentIntensityAnalyzer()
+
 
 def fetch_stats(selected_user,df):
 
@@ -126,6 +131,20 @@ def activity_heatmap(selected_user,df):
     user_heatmap = df.pivot_table(index='day_name', columns='period', values='message', aggfunc='count').fillna(0)
 
     return user_heatmap
+
+def sentiment_analysis(seleceted_user , df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+
+    df['sentiment'] = df['message'].apply(lambda x: sentiment_analyzer.polarity_scores(x))
+    df['sentiment_score'] = df['sentiment'].apply(lambda x: x['compound'])
+    df['sentiment_label'] = df['sentiment_score'].apply(lambda x: 'Positive' if x > 0 else ('Negative' if x < 0 else 'Neutral'))
+    sentiment_df = df.groupby('sentiment_label').count()['message'].reset_index()
+
+    return sentiment_df
+
+
+
 
 
 
