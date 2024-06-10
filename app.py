@@ -119,7 +119,7 @@ if uploaded_file is not None:
         st.title("Sentiment Analysis")
         sentiment_df = helper.sentiment_analysis(selected_user, df)
         fig, ax = plt.subplots()
-        ax.bar(sentiment_df['sentiment_label'], sentiment_df['message'], color=['green', 'red', 'blue'])
+        ax.bar(sentiment_df['sentiment_label'], sentiment_df['message'], color=['red', 'blue', 'green'])
         st.pyplot(fig)
         
 
