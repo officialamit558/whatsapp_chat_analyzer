@@ -132,7 +132,7 @@ def activity_heatmap(selected_user,df):
 
     return user_heatmap
 
-def sentiment_analysis(seleceted_user , df):
+def sentiment_analysis(selected_user , df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
 
