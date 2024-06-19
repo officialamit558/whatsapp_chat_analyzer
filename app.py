@@ -33,7 +33,7 @@ st.markdown("""
     - Ensure the chat file is not too large to avoid performance issues.
 
     ## Memory Size
-    - The app can handle files up to 50MB efficiently.
+    - The app can handle files up to 200MB efficiently.
     - Larger files may take more time to process and could impact performance.
 
     ## Privacy and Security
@@ -46,8 +46,8 @@ st.markdown("""
     # Add an image
 image_path1 = "Designer.png"
 image_path = "downloadfile.jpg" # Update with the correct path to your image
-st.image(image_path, caption="WhatsApp Chat Analysis", use_column_width=500)
-st.image(image_path1, caption="WhatsApp Chat Analysis", use_column_width=500)
+st.image(image_path, caption="WhatsApp Chat Analysis", width=400)
+st.image(image_path1, caption="WhatsApp Chat Analysis", width=400)
 
 st.sidebar.title("Whatsapp Chat Analyzer")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
