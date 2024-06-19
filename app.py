@@ -190,12 +190,37 @@ def analyze():
                 ax.pie(emoji_df[1].head(), labels=emoji_df[0].head(), autopct="%0.2f")
                 st.pyplot(fig)
 
+def about_us():
+    st.title("About Us")
+    st.markdown("""
+        ## About Our Team
+        We are a group of passionate data scientists and software engineers dedicated to making data analysis accessible and useful for everyone. Our WhatsApp Chat Analyzer project aims to provide users with insightful analytics from their chat data in an easy-to-use interface.
+
+        ## Our Mission
+        Our mission is to empower users to gain meaningful insights from their conversations and help them understand their communication patterns better.
+
+        ## Contact Us
+        If you have any questions or feedback, feel free to reach out to us at:
+        - Email: officialamit558@gmail.com.com
+        - Phone: 6201793724
+        - Address: Jawahar Lal Nehru Marg, Jhalana Gram, Malviya Nagar, Jaipur, Rajasthan 302017
+        
+        Follow us on social media:
+        - Twitter: [@whatsapp_analyzer](https://twitter.com/whatsapp_analyzer)
+        - LinkedIn: [WhatsApp Chat Analyzer](https://www.linkedin.com/company/whatsapp-chat-analyzer)
+
+        Thank you for using our WhatsApp Chat Analyzer tool!
+    """)
+
 # Sidebar navigation
-st.sidebar.title(" Whatsapp Chat Analyzer ")
-page = st.sidebar.radio("Go to", ["Home", "Analyze"])
+st.sidebar.title(" Whatsapp Chat Analyzer")
+page = st.sidebar.radio("Go to", ["Home", "Analyze", "About Us"])
 
 # Display the selected section
 if page == "Home":
     home()
 elif page == "Analyze":
     analyze()
+elif page == "About Us":
+    about_us()
+
