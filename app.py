@@ -3,8 +3,53 @@ import preprocessor,helper
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.sidebar.title("Whatsapp Chat Analyzer")
+# Description
+st.title("Welcome to WhatsApp Chat Analyzer")
+st.markdown("""
+    ## Product Description
+    The WhatsApp Chat Analyzer is a powerful tool designed to help you gain insights from your WhatsApp chat data. By simply uploading your chat file, you can explore various metrics and visualizations that reveal patterns and trends in your conversations.
 
+    ## Features
+    - **Total Messages**: Count the total number of messages exchanged.
+    - **Word Analysis**: Analyze the total words used in the chat.
+    - **Media Analysis**: Count the number of media files shared.
+    - **Link Analysis**: Count the number of links shared.
+    - **Sentiment Analysis**: Understand the sentiment of the conversation.
+    - **Emoji Analysis**: Analyze the emojis used in the chat.
+    - **Monthly Timeline**: Visualize the number of messages sent each month.
+    - **Daily Timeline**: See daily message trends.
+    - **Activity Maps**: Discover the most active days and months.
+    - **Word Clouds**: Generate word clouds to see the most frequently used words.
+    - **Common Words**: Identify the most common words in the chat.
+    - **Busy Users**: Find out who is the most active user in the group.
+
+    ## How to Use It
+    1. **Upload File**: Choose your WhatsApp chat file (in `.txt` format) from the sidebar.
+    2. **Select User**: Select the user for whom you want to see the analysis or choose 'Overall' for group analysis.
+    3. **View Analysis**: Click on 'Show Analysis' to view detailed insights and visualizations.
+
+    ## Restrictions
+    - The app currently supports only `.txt` files exported from WhatsApp.
+    - Ensure the chat file is not too large to avoid performance issues.
+
+    ## Memory Size
+    - The app can handle files up to 50MB efficiently.
+    - Larger files may take more time to process and could impact performance.
+
+    ## Privacy and Security
+    - **Data Privacy**: Your uploaded chat data is processed locally and not stored on any server.
+    - **Security**: The app does not share your data with third parties. All processing is done in-memory and the data is discarded after the session ends.
+    
+    Enjoy analyzing your WhatsApp conversations with our interactive tools!
+    """)
+    
+    # Add an image
+image_path1 = "Designer.png"
+image_path = "downloadfile.jpg" # Update with the correct path to your image
+st.image(image_path, caption="WhatsApp Chat Analysis", use_column_width=500)
+st.image(image_path1, caption="WhatsApp Chat Analysis", use_column_width=500)
+
+st.sidebar.title("Whatsapp Chat Analyzer")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 
 if uploaded_file is not None:
